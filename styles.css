@@ -1,0 +1,156 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Background overlay with 50% transparency */
+  background-image: url('file:///C:/Users/ADMIN/OneDrive/Desktop/images/imgbg.jpeg'); /* Add the background image URL here */
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay; /* Blend the background image with the color overlay */
+  flex-direction: column; /* Stack the slider and thumbnails vertically */
+}
+
+.slider {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px; /* Space between slider and thumbnails */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for the slider */
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.caption {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6); /* Caption background */
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.slide:hover .caption {
+  opacity: 1;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 50px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+
+.thumbnail.active {
+  border-color: #007bff;
+}
+
+/* Responsive Design */
+
+/* For screens 768px or smaller (tablets and large phones) */
+@media screen and (max-width: 768px) {
+  .caption {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  button {
+    padding: 8px 12px;
+  }
+
+  .thumbnail {
+    width: 70px;
+    height: 45px;
+  }
+}
+
+/* For screens 480px or smaller (mobile devices) */
+@media screen and (max-width: 480px) {
+  .slider {
+    width: 100%;
+  }
+
+  .caption {
+    bottom: 15%;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+
+  button {
+    padding: 5px 8px;
+  }
+
+  .thumbnail {
+    width: 60px;
+    height: 40px;
+  }
+
+  .thumbnails {
+    gap: 5px;
+  }
+}
