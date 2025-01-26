@@ -7,7 +7,7 @@ body {
   align-items: center;
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.5); /* Background overlay with 50% transparency */
-  background-image: url('file:///C:/Users/ADMIN/OneDrive/Desktop/images/imgbg.jpeg'); /* Add the background image URL here */
+  background-image: url('imgbg.jpeg'); /* Add the background image URL here */
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay; /* Blend the background image with the color overlay */
